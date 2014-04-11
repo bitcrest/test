@@ -14,12 +14,20 @@ namespace Test_Github.Core
 
         public int MaxHp { get; private set; }
 
-        public string ReactSpecialization(Player other)
+        private string ReactSpecialization(Player other)
         {
+            if (other.Hp < 1)
+            {
+                other.Revive();
+            }
+            else
+            {
+                Revive();
+            }
             return "Player vs Player";
         }
 
-        public string ReactSpecialization(Enemy other)
+        private string ReactSpecialization(Enemy other)
         {
             return "Player vs Enemy";
         }

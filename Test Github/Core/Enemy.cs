@@ -2,7 +2,7 @@
 {
     public class Enemy : GameObject
     {
-        public string ReactSpecialization(Enemy other)
+        private string ReactSpecialization(Enemy other)
         {
             // from web again
             // from web + local

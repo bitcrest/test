@@ -21,10 +21,17 @@ namespace Test_Github.Core.Tests
         private Player _me;
 
         [Test(Description = "Test invalid ctor")]
-        [ExpectedException(typeof (ArgumentException), ExpectedMessage = "Max Hp must be above zero")]
-        public void PlayerInvalidMaxHpTest()
+        [ExpectedException(typeof(ArgumentException), ExpectedMessage = "Max Hp must be above zero")]
+        public void PlayerZeroMaxHpTest()
         {
             _me = new Player(0);
+        }
+
+        [Test(Description = "Test invalid ctor")]
+        [ExpectedException(typeof(ArgumentException), ExpectedMessage = "Max Hp must be above zero")]
+        public void PlayerNegativeMaxHpTest()
+        {
+            _me = new Player(-10);
         }
 
         [Test(Description = "Test normal ctor")]
@@ -50,7 +57,7 @@ namespace Test_Github.Core.Tests
         }
 
         [Test]
-        [ExpectedException(typeof (Exception))]
+        [ExpectedException(typeof(Exception))]
         public void ReactSpecializationVsUnknownTest()
         {
             GameObject go = new Unknown();
