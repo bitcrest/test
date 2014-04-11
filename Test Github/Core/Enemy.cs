@@ -4,7 +4,8 @@
     {
         public string ReactSpecialization(Enemy other)
         {
-            // from web
+            // from web + local
+
             return "Enemy vs Enemy";
         }
 
