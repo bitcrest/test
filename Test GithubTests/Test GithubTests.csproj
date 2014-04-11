@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Core\EnemyTests.cs" />
     <Compile Include="Core\PlayerTests.cs" />
+    <Compile Include="Core\UnknownTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,7 @@ namespace Test_Github.Core.Tests
     [TestFixture]
     public class EnemyTests
     {
-        [TearDown]
+        [TestFixtureTearDown]
         public void TearDown()
         {
             _me = null;
@@ -21,11 +21,27 @@ namespace Test_Github.Core.Tests
         private Enemy _me;
 
         [Test]
+        public void React_Player_OtherAttacked()
+        {
+            GameObject go = new Enemy();
+            string x = _me.React(go);
+            Assert.That(x, Is.EqualTo("Enemy vs Enemy"));
+        }
+
+        [Test]
         [ExpectedException(typeof(Exception))]
-        public void ReactSpecializationVsPlayerTest()
+        public void React_Player_Throws()
         {
             GameObject go = new Player(1);
-            string x = _me.React(go);
+            _me.React(go);
+        }
+
+        [Test]
+        [ExpectedException(typeof(Exception))]
+        public void React_Unknown_Throws()
+        {
+            GameObject go = new Unknown();
+            _me.React(go);
         }
     }
 }
